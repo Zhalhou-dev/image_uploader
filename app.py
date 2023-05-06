@@ -36,11 +36,11 @@ def make_grayscale(input_image):
 	image_array=np.fromstring(input_image,dtype="uint8")
 	print("Image as an array:",image_array)
 
-	decoded_array=cv2.imdecode(image_array,cv2.IMREAD_UNCHANGED())
+	decoded_array=cv2.imdecode(image_array,cv2.IMREAD_UNCHANGED)
 	print("Image after being decoded:",decoded_array)
 
 	converted_image=cv2.cvtColor(decoded_array,cv2.COLOR_RGB2GRAY)
-	status,output_image-cv2.imencode(".PNG",converted_image)
+	status,output_image=cv2.imencode(".PNG",converted_image)
 
 	print("Status of image:",status)
 	return output_image
